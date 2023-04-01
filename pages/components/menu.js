@@ -19,7 +19,7 @@ const Menu = function () {
     <div className={menu.abs}>About</div>,
     <div className={menu.abs}>Photos</div>,
     <div className={menu.abs}>Projects</div>,
-    <div className={menu.abs}><Contact /></div>,
+    <Contact />,
   ]);
 
   return (
