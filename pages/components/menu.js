@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import menu from '../styles/Menu.module.scss'
-import Home from './home.js'
-import Contact from './contact.js'
+import Home from './Home.js'
+import Contact from './Contact.js'
+import Gallery from './Gallery'
+import Projects from './Projects'
+import About from './About'
 
 const Menu = function () {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -16,9 +19,9 @@ const Menu = function () {
 
   const [data, setData] = useState([
     <Home setCurrent={setCurrent} />,
-    <div className={menu.abs}>About</div>,
-    <div className={menu.abs}>Photos</div>,
-    <div className={menu.abs}>Projects</div>,
+    <div className={menu.abs}><About /></div>,
+    <div className={menu.abs}><Gallery /></div>,
+    <div className={menu.abs}><Projects /></div>,
     <Contact />,
   ]);
 
