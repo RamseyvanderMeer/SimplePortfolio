@@ -1,0 +1,51 @@
+.scaleIn{
+  animation: 1.7s ease-out 0s 1 scaleIn;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+  15% {
+    transform: scale(0);
+    opacity: 0;
+    
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+.scaleOut{
+  animation: scaleOut 1s 1 linear forwards;
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1);
+    
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+    
+  }
+}
+
+.abs{
+  position: absolute;
+}
+
+.menu{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
