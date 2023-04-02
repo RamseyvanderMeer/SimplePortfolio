@@ -14,7 +14,6 @@ export default function Contact() {
       subject,
       sender,
     })
-    console.log(response)
     if (response.status === 200) {
       setMessage("")
       setSubject("")

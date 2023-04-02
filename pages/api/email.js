@@ -299,8 +299,7 @@ export default async function handler(req, res) {
 </html>`,
   }
 
-    // const response = await sgMail.send(msg)
-    console.log(response)
+    const response = await sgMail.send(msg)
     if (response.code == 400) {
         res.status(400).json({ message: "Email not sent" })
     }

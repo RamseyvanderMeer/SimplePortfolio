@@ -41,7 +41,7 @@ const Menu = function () {
         {data[prevIdx]}
       </div>
     </div>
-  );
+  )
 };
 
 export default Menu;

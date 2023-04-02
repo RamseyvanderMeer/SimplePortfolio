@@ -98,12 +98,12 @@
     border: 1px solid white;
     text-align: center;
     border-radius: 2em;
-    cursor: pointer;
     font-weight: 600;
     font-size: 5vw;
   }
 
   .section:hover {
+    cursor: pointer;
     background-color: white;
     color: black;
     font-weight: 800;
