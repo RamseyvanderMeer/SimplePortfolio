@@ -3,21 +3,36 @@ import { Gallery } from "react-grid-gallery"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
 import imageStyle from "../styles/Gallery.module.scss"
-import { images } from "./images"
+import axios from "axios"
 
 export default function PhotoGallery({ currentIdx }) {
-  const slides = images.map(({ original, width, height }) => ({
-    src: original,
-    width,
-    height,
-  }))
   const [index, setIndex] = useState(-1)
+  const [images, setImages] = useState([])
+  const [slides, setSlides] = useState([])
 
-  const handleClick = (index, item) => setIndex(index)
+  const handleClick = (index, item) => {
+    setIndex(index)
+  }
+
+    useEffect(() => {
+      async function fetchData() {
+        const { data } = await axios.get("/api/cloudinary")
+        setImages(data)
+        const slides = data.map((image) => ({
+          src: image.src,
+          width: image.width,
+          height: image.height,
+        }))
+        setSlides(slides)
+      }
+    fetchData()
+  }, [])
+
+
 
   return (
     <div>
-      {currentIdx == 2 ? (
+      {currentIdx == 2 && images != [] ? (
         <div className={imageStyle.gallery}>
           <div className={imageStyle.scroll}>
             <Gallery

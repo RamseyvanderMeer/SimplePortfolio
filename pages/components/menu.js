@@ -20,7 +20,6 @@ const Menu = function () {
     }
   }
 
-  console.log(currentIdx)
   const [data, setData] = useState([
     <Home setCurrent={setCurrent} />,
     <About />,
