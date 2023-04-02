@@ -2,18 +2,20 @@ import React, { useState } from "react"
 import about from "../styles/About.module.scss"
 import ramsey from "../images/ramsey.svg"
 import vanderMeer from "../images/vanderMeer.svg"
-import replay from "../images/replay.svg"
+import repeat from "../images/replay.svg"
 import Image from "next/image"
 
 export default function About() {
   const [intro, setIntro] = useState(0)
   const [svg, setSvg] = useState(1)
   const [crawl, setCrawl] = useState(2)
+  const [replay, setReplay] = useState(false)
 
   function reset() {
     setIntro(intro + 1)
     setSvg(svg + 1)
     setCrawl(crawl + 1)
+      setReplay(true)
   }
 
   return (
@@ -72,15 +74,28 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div onClick={reset} className={about.replay}>
-        <Image
-          priority
-          src={replay}
-          height={50}
-          width={50}
-          alt="replay"
-          className={about.replaySvg}
-        />
+      <div className={about.replay}>
+        {replay ? (
+          <Image
+            priority
+            src={repeat}
+            height={50}
+            width={50}
+            alt="replay"
+            onAnimationEnd={() => setReplay(false)}
+            className={about.replaySvgActive}
+          />
+        ) : (
+          <Image
+            priority
+            src={repeat}
+            height={50}
+            width={50}
+            alt="replay"
+            onClick={reset}
+            className={about.replaySvg}
+          />
+        )}
       </div>
     </div>
   )

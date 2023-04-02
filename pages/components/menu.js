@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import menu from '../styles/Menu.module.scss'
 import Home from './Home.js'
 import Contact from './Contact.js'
 import Gallery from './Gallery'
 import Projects from './Projects'
 import About from './About'
+import hamburger from '../images/menu.svg'
 
 const Menu = function () {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -30,7 +32,7 @@ const Menu = function () {
       <div>
         {currentIdx != 0 ? (
           <button className={menu.menu} onClick={() => setCurrent(0)}>
-            Menu
+            <Image src={hamburger} alt="hamburger" width={50} height={50} />
           </button>
         ) : null}
       </div>

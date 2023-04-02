@@ -12,7 +12,7 @@
   font-weight: 400;
   font-size: 300%;
   opacity: 0;
-  animation: intro 3s ease-out 1s;
+  animation: intro 3.5s ease-out 1s;
 }
 
 .intro {
@@ -45,7 +45,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  animation: logo 5s ease-out 4s;
+  animation: logo 5.5s ease-out 4s;
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -110,7 +110,7 @@
 
 /* Set the scrolling animation and position it */
 .content {
-  animation: scroll 80s linear 9s;
+  animation: scroll 80s linear 9.5s;
   position: absolute;
   top: 100%;
 }
@@ -148,6 +148,20 @@
   opacity: 1;
   transform: scale(1.1);
 }
+
+.replaySvgActive {
+  animation: filp 0.4s 1;
+}
+
+@keyframes filp {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
 
 @keyframes replay {
     0% {
