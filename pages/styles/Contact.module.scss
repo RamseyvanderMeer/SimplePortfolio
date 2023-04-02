@@ -13,7 +13,7 @@
   align-items: left;
   justify-content: left;
   text-align: left;
-  background-color: #131313;
+  border: 1px solid white;
   padding: 1.5em 4.5em;
   border-radius: 1em;
   opacity: 0.9;
@@ -30,10 +30,11 @@
   padding: 5px;
   margin: 5px 0;
   outline: none;
-  background-color: #131313;
+  background: none;
   border: 0px none;
   border-bottom: 1px solid white;
   color: white;
+  font-size: 1.25em;
 }
 .title {
   position: relative;

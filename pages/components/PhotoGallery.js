@@ -14,25 +14,25 @@ export default function PhotoGallery({ currentIdx }) {
     setIndex(index)
   }
 
-    useEffect(() => {
-      async function fetchData() {
-        const { data } = await axios.get("/api/cloudinary")
-        setImages(data)
-        const slides = data.map((image) => ({
-          src: image.src,
-          width: image.width,
-          height: image.height,
-        }))
-        setSlides(slides)
-      }
-    fetchData()
+  useEffect(() => {
+    async function fetchData() {
+      const { data } = await axios.get("/api/cloudinary")
+      setImages(data)
+      const slides = data.map((image) => ({
+        src: image.src,
+        width: image.width,
+        height: image.height,
+      }))
+      setSlides(slides)
+    }
+    if (images.length == 0) {
+        fetchData()
+    }
   }, [])
-
-
 
   return (
     <div>
-      {currentIdx == 2 && images != [] ? (
+      {currentIdx == 2 ? (
         <div className={imageStyle.gallery}>
           <div className={imageStyle.scroll}>
             <Gallery
