@@ -15,7 +15,7 @@ export default function About() {
     setIntro(intro + 1)
     setSvg(svg + 1)
     setCrawl(crawl + 1)
-      setReplay(true)
+    setReplay(true)
   }
 
   return (
