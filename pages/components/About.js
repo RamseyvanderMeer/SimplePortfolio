@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import about from "../styles/About.module.scss"
-import ramsey from "../images/ramsey.svg"
+import ramsey from "../images/Ramsey.svg"
 import vanderMeer from "../images/vanderMeer.svg"
 import repeat from "../images/replay.svg"
 import Image from "next/image"
